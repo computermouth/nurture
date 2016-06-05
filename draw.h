@@ -3,7 +3,7 @@
 
 #include "world.h"
 #include "character.h"
-
+#include "tiles.h"
 
 
 void draw(world* draw_world, character* draw_character){
@@ -24,11 +24,7 @@ void draw(world* draw_world, character* draw_character){
 		case 1:
 			for(i = 0; i < 9; i++){
 				for(j = 0; j < 9; j++){
-					if(draw_world->room_map->alpha[i][j] == 0){
-						buffer[i][j] = 'X';
-					} else {
-						buffer[i][j] = ' ';
-					}					
+					buffer[i][j] = tile_fetch(draw_world->room_map->alpha[i][j]);				
 				}
 			}
 			break;
