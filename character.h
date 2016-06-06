@@ -54,6 +54,32 @@ character* new_current_room(character* build_current_room){
 	return build_current_room;
 }
 
+character* change_current_room(world* change_world, character* change_room){
+
+	ushort room_ind = change_world->map
+		[change_room->char_world_pos->x]
+		[change_room->char_world_pos->y];
+	
+	int i = 0;
+	
+	switch(room_ind){
+		case 1:
+			for(i = 0; i < 9; i++)
+				memcpy(change_room->current_room[i], change_world->room_map->alpha[i], sizeof(change_world->room_map->alpha[i]));
+			break;
+		case 2:
+			for(i = 0; i < 9; i++)
+				memcpy(change_room->current_room[i], change_world->room_map->pipe[i], sizeof(change_world->room_map->pipe[i]));
+			break;
+		case 9:
+			for(i = 0; i < 9; i++)
+				memcpy(change_room->current_room[i], change_world->room_map->omega[i], sizeof(change_world->room_map->omega[i]));
+			break;
+	}
+	
+	return change_room;
+}
+
 character* new_character(){
 	character *build_character = malloc(sizeof(character));
 	

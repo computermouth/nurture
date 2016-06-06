@@ -14,6 +14,9 @@ void draw(world* draw_world, character* draw_character){
 	ushort room_ind = draw_world->map
 		[draw_character->char_world_pos->x]
 		[draw_character->char_world_pos->y];
+		
+	printf("\nX: %d\tY: %d\n", draw_character->char_world_pos->x, draw_character->char_world_pos->y);
+	printf("\nX: %d\tY: %d\n", draw_character->char_room_pos->x, draw_character->char_room_pos->y);
 	
 	
 	int i, j;
@@ -29,8 +32,18 @@ void draw(world* draw_world, character* draw_character){
 			}
 			break;
 		case 2:
+			for(i = 0; i < 9; i++){
+				for(j = 0; j < 9; j++){
+					buffer[i][j] = tile_fetch(draw_world->room_map->pipe[i][j]);				
+				}
+			}
 			break;
 		case 9:
+			for(i = 0; i < 9; i++){
+				for(j = 0; j < 9; j++){
+					buffer[i][j] = tile_fetch(draw_world->room_map->omega[i][j]);				
+				}
+			}
 			break;
 	}
 	
