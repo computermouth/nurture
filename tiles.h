@@ -1,10 +1,10 @@
 
+#ifndef TILES_H
+#define TILES_H
 
-char tile_fetch(ushort tile){
-	switch(tile){
-		case 0:
-			return 'X';
-		default:
-			return ' ';
-	}
-}
+#include <stdio.h>
+#include <stdlib.h>
+
+char tile_fetch(ushort);
+
+#endif
