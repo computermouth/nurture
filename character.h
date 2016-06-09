@@ -28,12 +28,12 @@ world_pos* new_world_pos();
 
 room_pos* new_room_pos();
 
-character* new_current_room(character* build_current_room);
+character* new_current_room(character*);
 
-character* change_current_room(world* change_world, character* change_room);
+character* change_current_room(world*, character*);
 
 character* new_character();
 
-void destroy_character(character* dead_character);
+void destroy_character(character*);
 
 #endif

@@ -23,6 +23,6 @@ rooms* new_rooms();
 
 world* new_world();
 
-void destroy_world(world* dead_world);
+void destroy_world(world*);
 
 #endif

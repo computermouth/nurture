@@ -7,10 +7,10 @@
 
 #include "character.h"
 
-character* check_interact(world* inter_world, character* inter_character);
+character* check_interact(world*, character*);
 
-character* check_move(character* input_character, char input);
+character* check_move(character*, char);
 
-character* update(world* update_world, character* update_character);
+character* update(world*, character*);
 
 #endif

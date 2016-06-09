@@ -9,6 +9,6 @@
 #include "tiles.h"
 
 
-void draw(world* draw_world, character* draw_character);
+void draw(world*, character*);
 
 #endif
